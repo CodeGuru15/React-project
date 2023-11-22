@@ -7,15 +7,17 @@ import Nav from "./components/Nav";
 import Category from "./components/Category";
 import SlideBar from "./components/Slidebar";
 import Cards from "./components/Card";
+import SignUp from "./components/SignUp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Login />
+    {/* <Login />
     <Nav />
     <Category />
     <SlideBar />
-    <Cards />
+    <Cards /> */}
+    <SignUp />
   </React.StrictMode>,
 );
 
