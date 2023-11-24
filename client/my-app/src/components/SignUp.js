@@ -1,7 +1,7 @@
 import "./style.css";
 import { TfiFacebook } from "react-icons/tfi";
 import { FcGoogle } from "react-icons/fc";
-import Inputs from "./InputSignUp";
+import SignUpForm from "./SignUpForm";
 
 const SignUp = () => {
   return (
@@ -18,7 +18,7 @@ const SignUp = () => {
         </span>
       </div>
       <div className="m-1 sm:flex sm:justify-center">
-        <Inputs />
+        <SignUpForm />
         <div className="m-1 grid place-content-center pl-2">
           <div className="flex p-2">
             <div className="border px-1 pt-2 text-blue-800">

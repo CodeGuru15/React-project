@@ -5,38 +5,34 @@ import { FaMobile } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 
-const Inputs = () => {
-  const [data, SetData] = useState({});
+const SignUpForm = () => {
+  const [data, setData] = useState({});
 
-  const submitHandler = (e) => {
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setData((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const user = e.target.name.value;
-    const contact = e.target.contact.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    SetData({
-      name: user,
-      contact: contact,
-      email: email,
-      password: password,
-    });
     console.log(data);
   };
 
   return (
     <div className="m-1 grid border-indigo-300 text-center sm:border-r-2 sm:pr-5">
-      <form onSubmit={submitHandler}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">
-          <i>
-            <FaUser />
-          </i>
+          <FaUser />
           <input
             type="text"
-            name="name"
+            name="username"
+            value={data.username || ""}
+            onChange={handleChange}
             id="name"
             placeholder="Your name"
             autoComplete="off"
-            required="true"
+            required={true}
             className="m-1 border-b border-black p-1"
           ></input>
         </label>
@@ -45,6 +41,8 @@ const Inputs = () => {
           <input
             type="number"
             name="contact"
+            value={data.contact || ""}
+            onChange={handleChange}
             id="contact"
             placeholder="Contact No."
             autoComplete="off"
@@ -56,10 +54,12 @@ const Inputs = () => {
           <input
             type="email"
             name="email"
+            value={data.email || ""}
+            onChange={handleChange}
             id="email"
             placeholder="Email"
             autoComplete="off"
-            required="true"
+            required={true}
             className="m-1 border-b border-black p-1"
           ></input>
         </label>
@@ -67,10 +67,12 @@ const Inputs = () => {
           <RiLockPasswordFill />
           <input
             name="password"
+            value={data.password || ""}
+            onChange={handleChange}
             id="password"
             placeholder="Password"
             autoComplete="off"
-            required="true"
+            required={true}
             className="m-1 border-b border-black p-1"
           ></input>
         </label>
@@ -87,4 +89,4 @@ const Inputs = () => {
   );
 };
 
-export default Inputs;
+export default SignUpForm;
