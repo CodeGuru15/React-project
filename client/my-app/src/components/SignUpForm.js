@@ -10,9 +10,6 @@ import { IoMdEyeOff } from "react-icons/io";
 const SignUpForm = () => {
   const [data, setData] = useState({});
   const [toggle, setToggle] = useState(true);
-  const [hide, setHide] = useState("password");
-  const [eye, setEye] = useState(true);
-  const pass = eye == true ? <IoMdEyeOff /> : <IoMdEye />;
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -28,9 +25,10 @@ const SignUpForm = () => {
 
   const handleToogle = () => {
     setToggle(!toggle);
-    setHide(toggle == true ? "password" : "text");
-    setEye(!eye);
   };
+
+  const hide = toggle == true ? "password" : "text";
+  const pass = toggle == true ? <IoMdEyeOff /> : <IoMdEye />;
 
   return (
     <div className="m-1 grid border-indigo-300 text-center sm:border-r-2 sm:pr-5">
