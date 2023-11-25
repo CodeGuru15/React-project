@@ -22,8 +22,10 @@ const SignUpForm = () => {
   return (
     <div className="m-1 grid border-indigo-300 text-center sm:border-r-2 sm:pr-5">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          <FaUser />
+        <label htmlFor="name" className="flex">
+          <div className="relative pt-3">
+            <FaUser />
+          </div>
           <input
             type="text"
             name="username"
@@ -36,8 +38,11 @@ const SignUpForm = () => {
             className="m-1 border-b border-black p-1"
           ></input>
         </label>
-        <label htmlFor="contact">
-          <FaMobile />
+        <label htmlFor="contact" className="flex">
+          <div className="relative pt-3">
+            <FaMobile />
+          </div>
+
           <input
             type="number"
             name="contact"
@@ -49,8 +54,10 @@ const SignUpForm = () => {
             className="m-1 border-b border-black p-1"
           ></input>
         </label>
-        <label htmlFor="email">
-          <MdEmail />
+        <label htmlFor="email" className="flex">
+          <div className="relative pt-3">
+            <MdEmail />
+          </div>
           <input
             type="email"
             name="email"
@@ -63,8 +70,10 @@ const SignUpForm = () => {
             className="m-1 border-b border-black p-1"
           ></input>
         </label>
-        <label htmlFor="password">
-          <RiLockPasswordFill />
+        <label htmlFor="password" className="flex">
+          <div className="relative pt-3">
+            <RiLockPasswordFill />
+          </div>
           <input
             name="password"
             value={data.password || ""}
