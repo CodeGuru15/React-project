@@ -1,5 +1,9 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
+
+app.use(cors({ origin: "*" })); // accepting request from all server
+
 const productRouter = require("../routes/poductRoutes");
 
 const mongoose = require("mongoose");
@@ -20,15 +24,7 @@ app.use(express.json()); // we are using json format for the data
 app.use(productRouter); // link routes
 
 app.get("/", (req, res) => {
-  res
-    .status(200)
-    .send(
-      "<h1 style=color:red;text-align:center>Hello World, Welcome to Home page</h1>"
-    );
-});
-
-app.get("/register", (req, res) => {
-  res.status(200).send("This is registration page");
+  res.status(200).send("<h1 style=color:red;text-align:center>Welcome</h1>");
 });
 
 const port = process.env.PORT || 2000;

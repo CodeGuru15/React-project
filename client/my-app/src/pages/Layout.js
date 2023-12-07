@@ -24,9 +24,10 @@ const Layout = () => {
         <div>
           <ul className="flex">
             <Li item="Home" link="/" />
-            <Li item="About" link="about" />
+            <Li item="Products" link="products" />
             <Li item="Contact" link="contact" />
             <Li item="My Account" link="myaccount" />
+            <Li item="Admin" link="admin" />
           </ul>
         </div>
       </div>

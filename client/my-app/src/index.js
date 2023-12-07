@@ -6,8 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import SignUp from "./pages/SignUp";
-import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Products from "./pages/Products";
+import Admin from "./pages/admin";
 
 export default function App() {
   return (
@@ -15,9 +16,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="products" element={<Products />} />
           <Route path="contact" element={<Contact />} />
           <Route path="myaccount" element={<SignUp />} />
+          <Route path="admin" element={<Admin />} />
         </Route>
       </Routes>
     </BrowserRouter>
