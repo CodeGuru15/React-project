@@ -6,6 +6,11 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
+import axios from "axios";
+
+const UserMsg = () => {
+  return alert("Your account has been created successfully");
+};
 
 const SignUpForm = () => {
   const [data, setData] = useState({});
@@ -19,16 +24,22 @@ const SignUpForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
-    setData({});
+    try {
+      axios.post("http://localhost:2000/users", data);
+      setData({});
+      UserMsg();
+      // navigate("/home");
+    } catch (e) {
+      alert(`Error: ${e.message}`);
+    }
   };
 
   const handleToogle = () => {
     setToggle(!toggle);
   };
 
-  const hide = toggle == true ? "password" : "text";
-  const pass = toggle == true ? <IoMdEyeOff /> : <IoMdEye />;
+  const hide = toggle === true ? "password" : "text";
+  const pass = toggle === true ? <IoMdEyeOff /> : <IoMdEye />;
 
   return (
     <div className="m-1 grid border-indigo-300 text-center sm:border-r-2 sm:pr-5">

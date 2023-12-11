@@ -5,6 +5,7 @@ const app = express();
 app.use(cors({ origin: "*" })); // accepting request from all server
 
 const productRouter = require("../routes/poductRoutes");
+const userRouter = require("../routes/userRoutes");
 
 const mongoose = require("mongoose");
 
@@ -22,6 +23,8 @@ db.once("open", () => console.log("MongoDB connected succesfully"));
 app.use(express.json()); // we are using json format for the data
 
 app.use(productRouter); // link routes
+
+app.use(userRouter);
 
 app.get("/", (req, res) => {
   res.status(200).send("<h1 style=color:red;text-align:center>Welcome</h1>");

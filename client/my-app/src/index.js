@@ -5,10 +5,11 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
-import SignUp from "./pages/SignUp";
+
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Admin from "./pages/admin";
+import MyAccount from "./pages/MyAccount";
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="myaccount" element={<SignUp />} />
+          <Route path="myaccount" element={<MyAccount />} />
           <Route path="admin" element={<Admin />} />
         </Route>
       </Routes>

@@ -5,9 +5,13 @@ import { useState, useEffect } from "react";
 import SingleProduct from "../components/SingleProduct";
 
 const fetchProducts = async () => {
-  const res = await axios.get("http://localhost:2000/products");
-  const data = res.data;
-  return data;
+  try {
+    const res = await axios.get("http://localhost:2000/products");
+    const data = res.data;
+    return data;
+  } catch (error) {
+    alert(error.message);
+  }
 };
 
 const Products = () => {

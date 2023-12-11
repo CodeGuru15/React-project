@@ -1,23 +1,16 @@
 import "../components/style.css";
 import { TfiFacebook } from "react-icons/tfi";
 import { FcGoogle } from "react-icons/fc";
-import SignUpForm from "../components/SignUpForm";
+import SignUpForm from "./SignUpForm";
 
 const SignUp = () => {
   return (
-    <div className="grid h-[80vh] place-content-center">
+    <div className="grid h-[70vh] place-content-center">
       <div className="grid">
         <div className="m-1 text-center">
           <h1 className="text-indigo-600 sm:text-3xl">SIGN UP</h1>
         </div>
-        <div className="m-1 text-center">
-          <span>
-            Already have an account?
-            <a className="cursor-pointer pl-1 text-blue-500 hover:underline">
-              Log In
-            </a>
-          </span>
-        </div>
+
         <div className="m-1 sm:flex sm:justify-center">
           <SignUpForm />
           <div className="m-1 grid place-content-center pl-2">

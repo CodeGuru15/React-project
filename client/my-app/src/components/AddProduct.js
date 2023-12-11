@@ -13,8 +13,13 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:2000/products", data);
-    setData({});
+    try {
+      axios.post("http://localhost:2000/products", data);
+      setData({});
+      alert("Your product is added successfully");
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (

@@ -14,9 +14,14 @@ const UpdateProduct = () => {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:2000/products/${data.id}`, data);
-    console.log(data);
-    setData({});
+    try {
+      axios.put(`http://localhost:2000/products/${data.id}`, data);
+      console.log(data);
+      setData({});
+      alert("Your product is updated successfully");
+    } catch (e) {
+      alert(e.message);
+    }
   };
 
   return (

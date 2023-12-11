@@ -14,6 +14,7 @@ const DeleteProduct = () => {
     e.preventDefault();
     axios.delete(`http://localhost:2000/products/${deleteId}`);
     setDeleteId("");
+    alert("Your product is deleted successfully");
   };
 
   return (
